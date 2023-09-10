@@ -14,4 +14,8 @@
     <%= publication.user.email %>
   </p>
 
+  <% publication.images.each do |img| %>
+    <%= image_tag img %>
+  <% end %>
+
 </div>
