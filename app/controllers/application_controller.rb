@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
         publications_path
     end
 
+    def authorize_request(kind = nil) #si kind = nill 
+        unless kind.include?(current_user.role) # pero si kind es dif de nill pero es role entonces redirecciona.
+            redirect_to publications_path, notice: "holi :3 no tiene permiso"
+        end
+    end
+
     protected
 
     def configure_permitted_parameters

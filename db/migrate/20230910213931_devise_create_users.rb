@@ -34,7 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       t.string :name
       t.string :profile
-      t.integer :role
+      t.integer :role, default:0 
 
       t.timestamps null: false
     end
