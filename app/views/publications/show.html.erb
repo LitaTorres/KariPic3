@@ -15,3 +15,39 @@
 
   <%= link_to "Back to publications", publications_path %>
 </div>
+
+
+<div class="comments-section">
+  <h2>MeowMentarios </h2> <br>
+
+  <% if @comments.any? %>
+  <div class="card-deck">
+    <% @comments.each do |comment| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Usuario:</strong> <%= comment.user.email %></h5>
+        <p class="card-text"><strong>Comentario:</strong> <%= comment.content %></p>
+
+        <% if user_signed_in? && current_user.id == comment.user_id %>
+        <%= link_to "Editar comentario", edit_comment_path(comment), class: "btn btn-primary" %><br><br>
+        <%= button_to "Eliminar comentario", comment, method: :delete, class: "btn btn-primary" %> <br><br>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% else %>
+  <p>No hay comentarios para esta publicación.</p>
+  <% end %> <br>
+
+  <h2>Añadir un comentario</h2>
+
+  <%= form_with(model: @comment, url: publication_comments_path(@publication)) do |form| %>
+  <div class="form-group">
+    <%= form.label :content, "MeowMentarios " %>
+    <%= form.text_area :content, class: "form-control" %> <br>
+  </div>
+  <%= form.submit "Enviar comentario", class: "btn btn-warning" %> <br> <br>
+  <% end %>
+</div>
+</div>

@@ -13,6 +13,9 @@ class PublicationsController < ApplicationController
 
   # GET /publications/1 or /publications/1.json
   def show
+    @publication = Publication.find(params[:id])
+    @comment = Comment.new
+    @comments = @publication.comments
   end
 
   # GET /publications/new
@@ -28,6 +31,8 @@ class PublicationsController < ApplicationController
   def create
     @publication = Publication.new(publication_params)
     @publication.user_id = current_user.id
+    @comment = Comment.new
+    @comment.user = current_user
 
     respond_to do |format|
       if @publication.save
