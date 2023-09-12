@@ -6,19 +6,18 @@
 
   <% if user_signed_in? %>
 
-    <% if current_user.id == @publication.user_id %>
-      <%= link_to "Edit this publication", edit_publication_path(@publication) %>
-      <%= button_to "Destroy this publication", @publication, method: :delete %>
+    <% if current_user.id == @publication.user_id %> <br> <br>
+      <%= link_to "Editar esta pubicación", edit_publication_path(@publication) , class:"btn btn-primary" %> <br> <br>
+      <%= button_to "Eliminar esta publicación", @publication, method: :delete , class:"btn btn-danger" %>
     <% end %>
 
-  <% end %>
+  <% end %> <br>
 
-  <%= link_to "Back to publications", publications_path %>
+  <%= link_to "Volver a las publicaciones", publications_path, class:"btn btn-dark" %> <br> <br>
 </div>
 
-
 <div class="comments-section">
-  <h2>Karin fotos</h2> <br>
+  <h2> Reflexiones </h2> <br>
 
   <% if @comments.any? %>
   <div class="card-deck">
@@ -45,6 +44,7 @@
   <p>No hay comentarios para esta publicación.</p>
 <% end %>
 
+<br>
   <h2>Añadir un comentario</h2>
 
   <%= form_with(model: @comment, url: publication_comments_path(@publication)) do |form| %>
@@ -56,3 +56,4 @@
   <% end %>
 </div>
 </div>
+

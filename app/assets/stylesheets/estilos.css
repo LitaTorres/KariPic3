@@ -1,0 +1,21 @@
+
+.texto1 {
+    text-align: center;
+}
+
+.bold-text {
+    font-weight: bold;
+  }
+
+.label-dark {
+    color: #000;
+    font-weight: bold;
+}
+
+.button-dark {
+    color: #000 !important;
+  }
+
+.label-white {
+    color: #ffffff;
+}

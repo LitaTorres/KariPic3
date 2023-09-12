@@ -1,22 +1,21 @@
 <div id="<%= dom_id publication %>">
-  <p>
-    <strong>Title:</strong>
-    <%= publication.title %>
-  </p>
+  <div class="texto1">
+    <p class="bold-text">
+      <%= publication.title %>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= publication.description %>
-  </p>
+    <p>
+      <%= publication.description %>
+    </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= publication.user.email %>
-  </p>
+    <p class="bold-text">
+      <%= publication.user.name %>
+    </p>
 
-  <% publication.images.each do |img| %>
-    <%= image_tag img, style: "width: 500px; height: 500px;" %>
-  <% end %>
+    <% publication.images.each do |img| %>
+      <%= image_tag img, style: "width: 400px; height: 400px;" %>
+    <% end %>
+  </div>
 
 </div>
 

@@ -1,7 +1,7 @@
 <%= form_with(model: publication) do |form| %>
   <% if publication.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+      <h2><%= pluralize(publication.errors.count, "error") %> prohibido guardar esta publicación:</h2>
 
       <ul>
         <% publication.errors.each do |error| %>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.label :title, "Título", class: "label-dark", style: "display: block" %>
+    <%= form.text_field :title %> <br>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description, "Descripción", class: "label-dark", style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
@@ -31,6 +31,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Actualizar Publicación", class: "btn btn-warning" %> <br> <br>
   </div>
 <% end %>

@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Publications</h1>
+<h1 class="texto1"> Mis trabajos recientes </h1> <br><br>
 
 <div id="publications">
   <% @publications.each do |publication| %>
-    <%= render publication %>
+    <%= render publication %> <br>
     <p>
-      <%= link_to "Show this publication", publication %>
+      <%= link_to "Mostrar esta publicación", publication, class: "btn btn-dark" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New publication", new_publication_path %>
+<%= link_to "Nueva Publicación", new_publication_path, class: "btn btn-warning"%>

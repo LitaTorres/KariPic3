@@ -1,15 +1,15 @@
-<h2>Sign up</h2>
+<h2> Registrarse</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "Correo" , class: "label-dark", style: "display: block" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "Clave" , class: "label-dark", style: "display: block" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -17,22 +17,22 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Conformación de clave" , class: "label-dark", style: "display: block" %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Nombre" , class: "label-dark", style: "display: block" %>
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :profile %><br />
+    <%= f.label :profile, "Imagen de perfil" , class: "label-dark", style: "display: block" %>
     <%= f.file_field :profile, autofocus: true, autocomplete: "profile" %>
-  </div> <!-- file field para subir los archivos-->
+  </div> <!-- file field para subir los archivos--> <br>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Registrarme", class: "btn btn-warning" %> <br> <br>
   </div>
 <% end %>
 
