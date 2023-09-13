@@ -81,8 +81,7 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+
 production:
   <<: *default
-  database: KariPic3_production
-  username: KariPic3
-  password: <%= ENV["KARIPIC3_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
